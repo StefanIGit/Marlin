@@ -1075,7 +1075,7 @@ void lcd_cooldown() {
   static void lcd_level_bed() {
     START_MENU();
     MENU_ITEM(back, MSG_LEVEL_BED_CANCEL);
-    MENU_ITEM(submenu, MSG_LEVEL_BED, _lcd_level_bed_continue);
+    MENU_ITEM(submenu, MSG_LEVEL_BED_MANU, _lcd_level_bed_continue);
     END_MENU();
   }
 
@@ -1119,7 +1119,7 @@ static void lcd_prepare_menu() {
       axis_homed[X_AXIS] && axis_homed[Y_AXIS] ? PSTR("G29") : PSTR("G28\nG29")
     );
   #elif ENABLED(MANUAL_BED_LEVELING)
-    MENU_ITEM(submenu, MSG_LEVEL_BED, lcd_level_bed);
+    MENU_ITEM(submenu, MSG_LEVEL_BED_MANU, lcd_level_bed);
   #endif
 
   //
